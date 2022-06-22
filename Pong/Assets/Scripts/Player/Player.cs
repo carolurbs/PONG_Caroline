@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [Header("Point")]
     public int currentPoints;
     public TextMeshProUGUI uiTextPoints;
+    public Ball ballBase;
 
 
     #endregion
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
         if(currentPoints>=maxPoints)
         {
             GameManager.Instance.EndGame();
+            ballBase.CanMove(false);
+
         }
        
     }

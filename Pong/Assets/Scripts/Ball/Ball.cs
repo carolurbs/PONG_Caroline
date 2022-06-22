@@ -72,25 +72,26 @@ public class Ball : MonoBehaviour
         }
         
     }
+    #region área comentada - apenas leitura 
+    //Parte que dectecta o trigger para identificar qual player venceu - funcionando corretamente.
+    /*  private void OnTriggerEnter2D(Collider2D collision)
+      {
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.name == "Trigger1")
-        {
-            GameManager.Instance.playerTwo++;
-            Debug.Log("PlAYER DOIS PONTUOU");
-        }
+          if (collision.gameObject.name == "Trigger1")
+          {
+              GameManager.Instance.playerTwo++;
+              Debug.Log("PlAYER DOIS PONTUOU");
+          }
 
 
-        else if (collision.gameObject.name == "Trigger2")
-        {
-            GameManager.Instance.playerOne++;
-            Debug.Log("PlAYER UM PONTUOU");
+          else if (collision.gameObject.name == "Trigger2")
+          {
+              GameManager.Instance.playerOne++;
+              Debug.Log("PlAYER UM PONTUOU");
 
-        }
-    }
+          }
+      }*/
     #endregion
 
-
+    #endregion
 }

@@ -49,8 +49,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         stateMachine.SwitchState(StateMachine.StateType.END_GAME);
-        ballBase.CanMove(false);
-        Debug.Log(ballBase._canMove);
+        
     }
 
     public void ShowMainMenu()
@@ -67,21 +66,25 @@ public class GameManager : MonoBehaviour
 
         uiMainMenu.SetActive(false);
         uiEndGame.SetActive(true);
-        ballBase.CanMove(false);
-        if (playerOne >= playerBase.maxPoints)
-        {
-            playerUI.text = "PLAYER ONE WINS";
-            Debug.Log("PLAYER ONE WINS");
+
+        #region área comentada - apenas leitura 
+
+        //Algo aqui não funciona - Parte do código que detecta qual dos jogadores alcançou a pontuação máxima
+        /* if (playerOne >= playerBase.maxPoints)
+         {
+             playerUI.text = "PLAYER ONE WINS";
+             Debug.Log("PLAYER ONE WINS");
 
 
-        }
-        else if (playerTwo >= playerBase.maxPoints)
+         }
+         else if (playerTwo >= playerBase.maxPoints)
 
-        {
-            playerUI.text = "PLAYER TWO WINS";
-            Debug.Log("PLAYER TWO WINS");
-        }
+         {
+             playerUI.text = "PLAYER TWO WINS";
+             Debug.Log("PLAYER TWO WINS");
+         }
+*/
+     }
+        #endregion
 
     }
-
-}
