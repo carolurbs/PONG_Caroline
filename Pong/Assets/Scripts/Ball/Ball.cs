@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     [Header("Ball Settings")]
     public Vector2 speed = new Vector2(1, 1);
     public Vector2 startSpeed;
+  
 
     public string keyToCheck = "Player";
    
@@ -69,10 +70,27 @@ public class Ball : MonoBehaviour
             speed.y *= -1;
 
         }
-        if (collision.gameObject.name == "Trigger1") GameManager.Instance.playerOne++;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.name == "Trigger1")
+        {
+            GameManager.Instance.playerTwo++;
+            Debug.Log("PlAYER DOIS PONTUOU");
+        }
 
 
-        else if (collision.gameObject.name == "Trigger2") GameManager.Instance.playerTwo++;
+        else if (collision.gameObject.name == "Trigger2")
+        {
+            GameManager.Instance.playerOne++;
+            Debug.Log("PlAYER UM PONTUOU");
+
+        }
     }
     #endregion
+
+
 }

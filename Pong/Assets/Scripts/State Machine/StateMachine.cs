@@ -14,7 +14,7 @@ public class StateMachine : MonoBehaviour
     public Dictionary<StateType, StateBase> dictionaryState;
 
     private StateBase _currentState;
-    public Player player;
+    private Player player;
     public float timeToStartGame = 1f;
     public static StateMachine Instance;
 

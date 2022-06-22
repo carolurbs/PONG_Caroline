@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b13ced60b36446c49baa44293c7d1255, type: 2}
   m_sharedMaterial: {fileID: 5273694479276472146, guid: b13ced60b36446c49baa44293c7d1255, type: 2}
@@ -1446,7 +1446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebaba994aa2d4468631db9b94ac5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   timeToStartGame: 1
 --- !u!4 &924770002
 Transform:
@@ -2892,7 +2891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e863752b49f34a04fb2d6beb7f0145ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBase: {fileID: 0}
   playerOne: 0
   playerTwo: 0
   ballBase: {fileID: 1732875467}

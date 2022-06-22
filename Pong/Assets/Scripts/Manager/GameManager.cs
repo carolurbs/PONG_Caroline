@@ -7,7 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [Header("Player")]
-    public Player playerBase; 
+    private Player playerBase; 
     public int playerOne;
     public int playerTwo;
 
@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         stateMachine.SwitchState(StateMachine.StateType.END_GAME);
+        ballBase.CanMove(false);
+        Debug.Log(ballBase._canMove);
     }
 
     public void ShowMainMenu()
