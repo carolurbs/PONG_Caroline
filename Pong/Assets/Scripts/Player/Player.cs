@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     #region variáveis
     [Header("Player Settings")]
+    public int maxPoints;
     public float speed;
     public Rigidbody2D myRigidbody2D;
     [Header("Key Settup")]
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public int currentPoints;
     public TextMeshProUGUI uiTextPoints;
 
+
     #endregion
 
     #region métodos 
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
         currentPoints++;
         Debug.Log(currentPoints);
         UpdateUI();
+        CheckMaxPoints();
     }
 
     private void UpdateUI()
@@ -30,7 +33,14 @@ public class Player : MonoBehaviour
         uiTextPoints.text = currentPoints.ToString();
     }
     
-
+    private void  CheckMaxPoints()
+    {
+        if(currentPoints>=maxPoints)
+        {
+            GameManager.Instance.EndGame();
+        }
+       
+    }
 
     private void ResetPlayer()
     {
@@ -58,4 +68,6 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
+   
 }

@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     public Vector2 startSpeed;
 
     public string keyToCheck = "Player";
-
+   
     [Header("Randomization")]
     public Vector2 randSpeedY= new Vector2(1,3);
     public Vector2 randSpeedX = new Vector2(1, 3);
@@ -54,6 +54,9 @@ public class Ball : MonoBehaviour
       
         transform.Translate(speed);
     }
+    #endregion
+
+    #region Física
     private void OnCollisionEnter2D(Collision2D collision)
     {
        if(collision.gameObject.tag==keyToCheck)
@@ -66,6 +69,10 @@ public class Ball : MonoBehaviour
             speed.y *= -1;
 
         }
+        if (collision.gameObject.name == "Trigger1") GameManager.Instance.playerOne++;
+
+
+        else if (collision.gameObject.name == "Trigger2") GameManager.Instance.playerTwo++;
     }
     #endregion
 }

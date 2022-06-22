@@ -23,10 +23,10 @@ public class StateMachine : MonoBehaviour
         Instance = this;
 
         dictionaryState = new Dictionary<StateType, StateBase>();
-        dictionaryState.Add(StateType.MENU, new StateBase());
+        dictionaryState.Add(StateType.MENU, new StateMenu());
         dictionaryState.Add(StateType.PLAYING, new StatePlaying());
         dictionaryState.Add(StateType.RESET_POSTION, new StateResetPosition());
-        dictionaryState.Add(StateType.END_GAME, new StateBase());
+        dictionaryState.Add(StateType.END_GAME, new StateEndGame());
 
         SwitchState(StateType.MENU);
     }
@@ -34,11 +34,11 @@ public class StateMachine : MonoBehaviour
     {
         SwitchState(StateType.MENU);
     }
-    private void SwitchState(StateType state)
+    public void SwitchState(StateType state)
     {
         if (_currentState != null) _currentState.OnStateExit();
         _currentState=dictionaryState[state];
-        _currentState.OnStateEnter(player);
+        if (_currentState != null) _currentState.OnStateEnter();
     }
     private void Update()
     {

@@ -18,8 +18,17 @@ public class StateBase
     }
 }
 
+public class StateMenu : StateBase
+{
+    public override void OnStateEnter(object o = null)
+    {
+        base.OnStateEnter(o);
+        Ball b = (Ball)o;
 
-public class StatePlaying:StateBase
+        GameManager.Instance.ShowMainMenu();
+    }
+}
+    public class StatePlaying:StateBase
 {
     public override void OnStateEnter(object o = null)
     {
@@ -42,4 +51,12 @@ public class StateResetPosition : StateBase
 }
 
 
+public class StateEndGame : StateBase
+{
+    public override void OnStateEnter(object o = null)
+    {
+        base.OnStateEnter(o);
 
+        GameManager.Instance.EndGameMenu();
+    }
+}
