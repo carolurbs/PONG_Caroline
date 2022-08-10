@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class Player : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
     public int currentPoints;
     public TextMeshProUGUI uiTextPoints;
     public Ball ballBase;
-
+    public Image uiPlayer;
 
     #endregion
 
@@ -40,7 +41,6 @@ public class Player : MonoBehaviour
         {
             GameManager.Instance.EndGame();
             ballBase.CanMove(false);
-
         }
        
     }
@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
     private void ResetPlayer()
     {
         currentPoints = 0;
+    }
+
+    public void ChangeColor(Color c)
+    {
+        uiPlayer.color = c;
     }
     #endregion
 

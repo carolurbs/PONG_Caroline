@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 {
     [Header("Player")]
     private Player playerBase; 
-    public int playerOne;
-    public int playerTwo;
 
     [Header("Ball")]
 
@@ -21,7 +19,6 @@ public class GameManager : MonoBehaviour
     [Header("Menus")]
     public GameObject uiMainMenu;
     public GameObject uiEndGame; 
-    public TextMeshProUGUI playerUI;
 
     public void Awake()
     {
