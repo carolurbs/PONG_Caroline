@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Menus")]
     public GameObject uiMainMenu;
-    public GameObject uiEndGame; 
+    public GameObject uiEndGame;
+    public Player[] players;
 
     public void Awake()
     {
         Instance = this;
+        players = FindObjectsOfType<Player>();
     }
    
     public void ResetBall()
@@ -32,7 +34,13 @@ public class GameManager : MonoBehaviour
         Invoke(nameof(SetBallFree), timetoSetBallFree); 
         
     }
-
+    public void ResetPlayers()
+    {
+        foreach (var player in players)
+        {
+            player.ResetPlayer();
+        }
+    }
     private void SetBallFree()
     {
         ballBase.CanMove(true);

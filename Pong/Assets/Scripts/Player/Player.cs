@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI uiTextPoints;
     public Ball ballBase;
     public Image uiPlayer;
-
+    public string playerName; 
     #endregion
 
     #region métodos 
@@ -41,18 +41,24 @@ public class Player : MonoBehaviour
         {
             GameManager.Instance.EndGame();
             ballBase.CanMove(false);
+            HighScoreManager.Instance.SavePlayerWin(this);
         }
        
     }
 
-    private void ResetPlayer()
+    public void ResetPlayer()
     {
         currentPoints = 0;
     }
 
+
     public void ChangeColor(Color c)
     {
         uiPlayer.color = c;
+    }
+    public void SetName( string s)
+    {
+        playerName = s;
     }
     #endregion
 

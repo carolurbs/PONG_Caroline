@@ -12,6 +12,7 @@ public class ChangeNameBase : MonoBehaviour
     public TextMeshProUGUI uiTextName;
     public TMP_InputField uiInputFieldName;
     public GameObject changeNameInput;
+    public Player player;
     
     private string playerName;
     #endregion
@@ -21,6 +22,7 @@ public class ChangeNameBase : MonoBehaviour
         playerName= uiInputFieldName.text;
         uiTextName.text = uiInputFieldName.text;
         changeNameInput.SetActive(false);
+        player. SetName(playerName);
     }
     #endregion
 }
