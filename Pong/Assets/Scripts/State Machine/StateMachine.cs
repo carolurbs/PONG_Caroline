@@ -30,6 +30,10 @@ public class StateMachine : MonoBehaviour
 
         SwitchState(StateType.MENU);
     }
+    private void Start()
+    {
+        StartGame();
+    }
     private void StartGame()
     {
         SwitchState(StateType.MENU);

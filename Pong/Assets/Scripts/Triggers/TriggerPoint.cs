@@ -10,19 +10,11 @@ public class TriggerPoint : MonoBehaviour
     public bool _IsTrigger1;
     public Player player; 
     public string tagToCheck = "Ball";
-    public TextMeshProUGUI playerUI;
 
 
 
-    private void Start()
-    {
-        if (this.gameObject.name == "Trigger 1") _IsTrigger1 = true; 
-        else if (this.gameObject.name == "Trigger 2") _IsTrigger1 = false;
-    }
-    private void Update()
-    {
-        EndGameText();
-    }
+ 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag ==tagToCheck)
@@ -39,11 +31,7 @@ public class TriggerPoint : MonoBehaviour
             }
         }
     }
-  void EndGameText()
-    {
-        if (playerOne == player.maxPoints) playerUI.text = "Player 1 Wins"; 
-        else if (playerTwo == player.maxPoints) playerUI.text = "Player 2 Wins";
-    }
+
     private void CountPoint()
     {
         StateMachine.Instance.ResetPosition();

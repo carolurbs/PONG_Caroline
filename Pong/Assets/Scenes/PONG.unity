@@ -2871,7 +2871,6 @@ MonoBehaviour:
   _IsTrigger1: 1
   player: {fileID: 263988943}
   tagToCheck: Ball
-  playerUI: {fileID: 0}
 --- !u!1 &775288680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2338591007472221717, guid: cdd69415856fb9941b2c86cbc1216e4a, type: 3}
@@ -4721,7 +4720,6 @@ MonoBehaviour:
   _IsTrigger1: 0
   player: {fileID: 627716074}
   tagToCheck: Ball
-  playerUI: {fileID: 0}
 --- !u!50 &1124947975
 Rigidbody2D:
   serializedVersion: 4
@@ -4993,6 +4991,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7892161006991738269, guid: 86153f044f8f08d45b7460812c5c5084, type: 3}
+      propertyPath: ballBase
+      value: 
+      objectReference: {fileID: 1732875467}
     - target: {fileID: 7892161006991738269, guid: 86153f044f8f08d45b7460812c5c5084, type: 3}
       propertyPath: uiPlayer
       value: 
@@ -8819,6 +8821,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7892161006991738269, guid: 86153f044f8f08d45b7460812c5c5084, type: 3}
+      propertyPath: ballBase
+      value: 
+      objectReference: {fileID: 1732875467}
     - target: {fileID: 7892161006991738269, guid: 86153f044f8f08d45b7460812c5c5084, type: 3}
       propertyPath: uiPlayer
       value: 
